@@ -13,6 +13,7 @@ def get_json(url):
             data = r.json()
             return data
         except:
+            url=url.replace('api','api1').replace('api1','api2').replace('api2','api3').replace('api3','api').replace('api','api1')
             print("Retrying", i, url)
             continue
 

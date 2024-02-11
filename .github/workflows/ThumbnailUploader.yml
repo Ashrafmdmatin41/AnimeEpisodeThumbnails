@@ -3,7 +3,7 @@ name: Thumbnail Uploader
 on:
   schedule:
     # Run every week
-    - cron: "0 0 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -39,7 +39,7 @@ jobs:
           git add .
           git commit -m "Thumbnails Updated"
           git push
-      
+
       - name: execute py script
         run: python changeGitIgnore.py
 

@@ -1,4 +1,4 @@
-content ='''Thumbnails/*
+content ='''*.jpg
 *.pyc
 '''
 with open('.gitignore', 'w') as f:

@@ -2,6 +2,8 @@ import requests
 import os
 from Utils.ScreenshotGen import get_screenshot
 
+apiservers =['api1','api2','api3']
+
 def getJson(url):
     print("Getting", url)
     i = 0
@@ -12,6 +14,7 @@ def getJson(url):
             data = r.json()
             return data
         except:
+            url=url.replace('api','api1').replace('api1','api2').replace('api2','api3').replace('api3','api').replace('api','api1')
             print("Retrying", i, url)
             continue
     
