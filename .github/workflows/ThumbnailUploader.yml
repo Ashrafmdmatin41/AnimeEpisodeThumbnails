@@ -30,7 +30,7 @@ jobs:
           pip install -U requests opencv-python
 
       - name: execute py script
-        run: python weekly.py
+        run: python main.py
 
       - name: Update repo
         run: |
@@ -38,4 +38,15 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add .
           git commit -m "Thumbnails Updated"
+          git push
+      
+      - name: execute py script
+        run: python changeGitIgnore.py
+
+      - name: Update repo
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "GitIgnore Updated"
           git push

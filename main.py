@@ -76,6 +76,12 @@ def getPopularAnimes(page):
 
 
 if __name__ == '__main__':
+    # Change gitignore
+    content ='''*.pyc'''
+    
+    with open('.gitignore', 'w') as f:
+        f.write(content)
+
     with open('PopularPagesDone.txt', 'r') as f:
         page = int(f.read())
 
